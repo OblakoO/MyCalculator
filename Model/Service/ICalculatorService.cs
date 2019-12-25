@@ -9,7 +9,9 @@ namespace Model.Service
 {
     public interface ICalculatorService { 
         String GetResult();
+        String GetResult2();
         String CurrentNumber(string number);
+        String CurrentNumber2(string number);
         void SetData(List<Double> bigIntegers);
         List<Double> Execute(Operation operation);
     }

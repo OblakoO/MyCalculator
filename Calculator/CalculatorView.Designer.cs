@@ -67,12 +67,14 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.b_Delete = new System.Windows.Forms.Button();
+            this.b_Start = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid_History)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(10, 303);
+            this.button1.Location = new System.Drawing.Point(10, 307);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(60, 60);
             this.button1.TabIndex = 0;
@@ -82,7 +84,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(76, 303);
+            this.button2.Location = new System.Drawing.Point(76, 307);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(60, 60);
             this.button2.TabIndex = 1;
@@ -92,7 +94,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(142, 303);
+            this.button3.Location = new System.Drawing.Point(142, 307);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(60, 60);
             this.button3.TabIndex = 2;
@@ -102,7 +104,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(10, 237);
+            this.button4.Location = new System.Drawing.Point(10, 241);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(60, 60);
             this.button4.TabIndex = 3;
@@ -112,7 +114,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(76, 237);
+            this.button5.Location = new System.Drawing.Point(76, 241);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(60, 60);
             this.button5.TabIndex = 4;
@@ -122,7 +124,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(142, 237);
+            this.button6.Location = new System.Drawing.Point(142, 241);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(60, 60);
             this.button6.TabIndex = 5;
@@ -132,7 +134,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(10, 171);
+            this.button7.Location = new System.Drawing.Point(10, 175);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(60, 60);
             this.button7.TabIndex = 6;
@@ -142,7 +144,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(76, 171);
+            this.button8.Location = new System.Drawing.Point(76, 175);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(60, 60);
             this.button8.TabIndex = 7;
@@ -152,7 +154,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(142, 171);
+            this.button9.Location = new System.Drawing.Point(142, 175);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(60, 60);
             this.button9.TabIndex = 8;
@@ -162,7 +164,7 @@
             // 
             // button0
             // 
-            this.button0.Location = new System.Drawing.Point(76, 369);
+            this.button0.Location = new System.Drawing.Point(76, 373);
             this.button0.Name = "button0";
             this.button0.Size = new System.Drawing.Size(60, 60);
             this.button0.TabIndex = 9;
@@ -172,7 +174,7 @@
             // 
             // b_dot
             // 
-            this.b_dot.Location = new System.Drawing.Point(10, 369);
+            this.b_dot.Location = new System.Drawing.Point(10, 373);
             this.b_dot.Name = "b_dot";
             this.b_dot.Size = new System.Drawing.Size(60, 60);
             this.b_dot.TabIndex = 10;
@@ -183,17 +185,18 @@
             // b_plus
             // 
             this.b_plus.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.b_plus.Location = new System.Drawing.Point(208, 369);
+            this.b_plus.Location = new System.Drawing.Point(208, 373);
             this.b_plus.Name = "b_plus";
             this.b_plus.Size = new System.Drawing.Size(60, 60);
             this.b_plus.TabIndex = 11;
             this.b_plus.Text = "+";
             this.b_plus.UseVisualStyleBackColor = false;
+            this.b_plus.Click += new System.EventHandler(this.b_plus_Click);
             // 
             // b_minus
             // 
             this.b_minus.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.b_minus.Location = new System.Drawing.Point(208, 303);
+            this.b_minus.Location = new System.Drawing.Point(208, 307);
             this.b_minus.Name = "b_minus";
             this.b_minus.Size = new System.Drawing.Size(60, 60);
             this.b_minus.TabIndex = 12;
@@ -203,7 +206,7 @@
             // b_multiply
             // 
             this.b_multiply.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.b_multiply.Location = new System.Drawing.Point(208, 237);
+            this.b_multiply.Location = new System.Drawing.Point(208, 241);
             this.b_multiply.Name = "b_multiply";
             this.b_multiply.Size = new System.Drawing.Size(60, 60);
             this.b_multiply.TabIndex = 13;
@@ -213,7 +216,7 @@
             // b_divide
             // 
             this.b_divide.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.b_divide.Location = new System.Drawing.Point(208, 171);
+            this.b_divide.Location = new System.Drawing.Point(208, 175);
             this.b_divide.Name = "b_divide";
             this.b_divide.Size = new System.Drawing.Size(60, 60);
             this.b_divide.TabIndex = 14;
@@ -223,7 +226,7 @@
             // b_stepen2
             // 
             this.b_stepen2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.b_stepen2.Location = new System.Drawing.Point(208, 105);
+            this.b_stepen2.Location = new System.Drawing.Point(208, 109);
             this.b_stepen2.Name = "b_stepen2";
             this.b_stepen2.Size = new System.Drawing.Size(60, 60);
             this.b_stepen2.TabIndex = 15;
@@ -233,7 +236,7 @@
             // b_sepen
             // 
             this.b_sepen.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.b_sepen.Location = new System.Drawing.Point(142, 105);
+            this.b_sepen.Location = new System.Drawing.Point(142, 109);
             this.b_sepen.Name = "b_sepen";
             this.b_sepen.Size = new System.Drawing.Size(60, 60);
             this.b_sepen.TabIndex = 16;
@@ -243,7 +246,7 @@
             // b_sqrt2
             // 
             this.b_sqrt2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.b_sqrt2.Location = new System.Drawing.Point(76, 105);
+            this.b_sqrt2.Location = new System.Drawing.Point(76, 109);
             this.b_sqrt2.Name = "b_sqrt2";
             this.b_sqrt2.Size = new System.Drawing.Size(60, 60);
             this.b_sqrt2.TabIndex = 17;
@@ -253,7 +256,7 @@
             // b_sqrt
             // 
             this.b_sqrt.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.b_sqrt.Location = new System.Drawing.Point(10, 105);
+            this.b_sqrt.Location = new System.Drawing.Point(10, 109);
             this.b_sqrt.Name = "b_sqrt";
             this.b_sqrt.Size = new System.Drawing.Size(60, 60);
             this.b_sqrt.TabIndex = 18;
@@ -263,17 +266,18 @@
             // b_equally
             // 
             this.b_equally.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.b_equally.Location = new System.Drawing.Point(142, 369);
+            this.b_equally.Location = new System.Drawing.Point(208, 439);
             this.b_equally.Name = "b_equally";
             this.b_equally.Size = new System.Drawing.Size(60, 60);
             this.b_equally.TabIndex = 19;
             this.b_equally.Text = "=";
             this.b_equally.UseVisualStyleBackColor = false;
+            this.b_equally.Click += new System.EventHandler(this.b_equally_Click);
             // 
             // b_log
             // 
             this.b_log.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.b_log.Location = new System.Drawing.Point(208, 39);
+            this.b_log.Location = new System.Drawing.Point(208, 43);
             this.b_log.Name = "b_log";
             this.b_log.Size = new System.Drawing.Size(60, 60);
             this.b_log.TabIndex = 20;
@@ -283,7 +287,7 @@
             // b_fact
             // 
             this.b_fact.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.b_fact.Location = new System.Drawing.Point(142, 39);
+            this.b_fact.Location = new System.Drawing.Point(142, 43);
             this.b_fact.Name = "b_fact";
             this.b_fact.Size = new System.Drawing.Size(60, 60);
             this.b_fact.TabIndex = 21;
@@ -293,7 +297,7 @@
             // b_med
             // 
             this.b_med.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.b_med.Location = new System.Drawing.Point(76, 39);
+            this.b_med.Location = new System.Drawing.Point(76, 43);
             this.b_med.Name = "b_med";
             this.b_med.Size = new System.Drawing.Size(60, 60);
             this.b_med.TabIndex = 22;
@@ -303,7 +307,7 @@
             // b_std
             // 
             this.b_std.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.b_std.Location = new System.Drawing.Point(10, 39);
+            this.b_std.Location = new System.Drawing.Point(10, 43);
             this.b_std.Name = "b_std";
             this.b_std.Size = new System.Drawing.Size(60, 60);
             this.b_std.TabIndex = 23;
@@ -365,6 +369,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBox1.Location = new System.Drawing.Point(10, 11);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(192, 26);
             this.textBox1.TabIndex = 28;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -374,6 +379,7 @@
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBox4.Location = new System.Drawing.Point(208, 11);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(60, 26);
             this.textBox4.TabIndex = 33;
             // 
@@ -401,10 +407,10 @@
             // 
             // b_Probel
             // 
-            this.b_Probel.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.b_Probel.Location = new System.Drawing.Point(10, 435);
+            this.b_Probel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.b_Probel.Location = new System.Drawing.Point(142, 373);
             this.b_Probel.Name = "b_Probel";
-            this.b_Probel.Size = new System.Drawing.Size(258, 60);
+            this.b_Probel.Size = new System.Drawing.Size(58, 60);
             this.b_Probel.TabIndex = 36;
             this.b_Probel.Text = " ";
             this.b_Probel.UseVisualStyleBackColor = false;
@@ -453,11 +459,34 @@
             this.textBox3.Size = new System.Drawing.Size(42, 22);
             this.textBox3.TabIndex = 40;
             // 
+            // b_Delete
+            // 
+            this.b_Delete.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.b_Delete.Location = new System.Drawing.Point(10, 439);
+            this.b_Delete.Name = "b_Delete";
+            this.b_Delete.Size = new System.Drawing.Size(60, 60);
+            this.b_Delete.TabIndex = 41;
+            this.b_Delete.Text = "Delete";
+            this.b_Delete.UseVisualStyleBackColor = false;
+            // 
+            // b_Start
+            // 
+            this.b_Start.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.b_Start.Location = new System.Drawing.Point(76, 439);
+            this.b_Start.Name = "b_Start";
+            this.b_Start.Size = new System.Drawing.Size(124, 60);
+            this.b_Start.TabIndex = 42;
+            this.b_Start.Text = "Start";
+            this.b_Start.UseVisualStyleBackColor = false;
+            this.b_Start.Click += new System.EventHandler(this.b_Start_Click);
+            // 
             // CalculatorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 507);
+            this.Controls.Add(this.b_Start);
+            this.Controls.Add(this.b_Delete);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
@@ -543,6 +572,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button b_Delete;
+        private System.Windows.Forms.Button b_Start;
     }
 }
 

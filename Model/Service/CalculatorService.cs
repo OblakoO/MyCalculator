@@ -10,7 +10,9 @@ namespace Model.Service
     public class CalculatorService: ICalculatorService
     {
         private String resultNumber = "";
+        private String resultNumber2 = "";
         List<Double> numbers = new List<Double>();
+        //List<Double> numbers2 = new List<Double>();
         private Stack<Operation> executedOperations = new Stack<Operation>();
         private Stack<Operation> expectedOperations = new Stack<Operation>();
 
@@ -18,10 +20,19 @@ namespace Model.Service
         {
             return resultNumber;
         }
+        public String GetResult2()
+        {
+            return resultNumber2;
+        }
         public String CurrentNumber(string number)
         {
             resultNumber += number;
             return resultNumber;
+        }
+        public String CurrentNumber2(string number)
+        {
+            resultNumber2 += number;
+            return resultNumber2;
         }
         public void SetData(List<Double> bigIntegers)
         {
@@ -29,6 +40,13 @@ namespace Model.Service
             executedOperations.Clear();
             expectedOperations.Clear();
         }
+
+        //public void SetData2(List<Double> bigIntegers)
+        //{
+        //    numbers2 = new List<Double>(bigIntegers);
+        //    executedOperations.Clear();
+        //    expectedOperations.Clear();
+        //}
         public List<Double> Execute(Operation operation)
         {
             executedOperations.Push(operation);
