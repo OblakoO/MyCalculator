@@ -54,8 +54,6 @@
             this.b_med = new System.Windows.Forms.Button();
             this.b_std = new System.Windows.Forms.Button();
             this.grid_History = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.b_Undo = new System.Windows.Forms.Button();
             this.b_Repeat = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -318,30 +316,11 @@
             // 
             this.grid_History.BackgroundColor = System.Drawing.SystemColors.Window;
             this.grid_History.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_History.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
             this.grid_History.Location = new System.Drawing.Point(276, 74);
             this.grid_History.Name = "grid_History";
             this.grid_History.Size = new System.Drawing.Size(244, 354);
             this.grid_History.TabIndex = 25;
             this.grid_History.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_History_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Commands:";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Numbers:";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // b_Undo
             // 
@@ -562,8 +541,6 @@
         private System.Windows.Forms.Button b_Undo;
         private System.Windows.Forms.Button b_Repeat;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;

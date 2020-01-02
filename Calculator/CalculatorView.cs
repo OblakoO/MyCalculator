@@ -224,8 +224,8 @@ namespace Calculator
         //кнопки действий
         public void UpdateNumbers(List<Double> numbers)
         {
-            //string result = "";
-           // result += string.Join(" ", numbers);
+            string result = "";
+            result += string.Join(" ", numbers);
 
 
             //string tempStr = data.Text;
@@ -235,7 +235,11 @@ namespace Calculator
 
         private void b_plus_Click(object sender, EventArgs e)
         {
-            OperationExecuteEvent?.Invoke(new Summa(Double.Parse(textBox4.Text)));
+            if (start == true)
+            {
+                OperationExecuteEvent?.Invoke(new Summa(Double.Parse(textBox4.Text)));
+            }
+            
             
         }
 

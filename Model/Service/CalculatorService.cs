@@ -41,7 +41,7 @@ namespace Model.Service
         {
             
             DataRow dataRow = historyOfOperation.NewRow();
-            dataRow["Commands"] =resultNumber2;
+            dataRow["Commands"] = resultNumber2;
             dataRow["Numbers"] = resultNumber;
 
             historyOfOperation.Rows.Add(dataRow);
@@ -68,12 +68,14 @@ namespace Model.Service
             resultNumber2 += number;
             return resultNumber2;
         }
-        public void SetData(List<Double> bigIntegers)
-        {
-            numbers = new List<Double>(bigIntegers);
-            executedOperations.Clear();
-            expectedOperations.Clear();
-        }
+
+
+        //public void SetData(List<Double> bigIntegers)
+        //{
+        //    numbers = new List<Double>(bigIntegers);
+        //    executedOperations.Clear();
+        //    expectedOperations.Clear();
+        //}
         public List<Double> Execute(Operation operation)
         {
             executedOperations.Push(operation);
