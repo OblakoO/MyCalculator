@@ -4,5 +4,5 @@
 ## Class diagram
 ![Class diagram]()
 ## Use case diagram
-![Use case diagram]()
+![Use case diagram](https://raw.githubusercontent.com/OblakoO/MyCalculator/master/Basic%20Use%20Case%20Diagram.jpeg)
 ## Activity diagram
