@@ -237,17 +237,23 @@ namespace Calculator
         {
             if (start == true)
             {
+                Update();
                 OperationExecuteEvent?.Invoke(new Summa(Double.Parse(textBox4.Text)));
             }
             
             
         }
 
+        public void Update()
+        {
+            string[] strings = textBox1.Text.Split(' ');
+            List<Double> bigIntegers = strings.Select(numberString => Double.Parse(numberString)).ToList();
+            SetData?.Invoke(bigIntegers);
+        }
+
         private void b_equally_Click(object sender, EventArgs e)
         {
-           // string[] strings = textBox1.Text.Split(' ');
-            //List<Double> bigIntegers = strings.Select(numberString => Double.Parse(numberString)).ToList();
-            //SetData?.Invoke(bigIntegers);
+            
         }
 
         private void label1_Click(object sender, EventArgs e)

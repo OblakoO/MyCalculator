@@ -49,7 +49,7 @@ namespace Presenter
             _view.ClickDot += ClickDot;
             _view.ClickProbel += ClickProbel;
 
-           // _view.SetData += SetData1;
+            _view.SetData += SetData1;
             _view.OperationExecuteEvent += ExecuteOperationExecute;  //new
 
         }
@@ -67,13 +67,14 @@ namespace Presenter
         private void ExecuteOperationExecute(Operation operation) //new
         {
             List<Double> numbers = _calculateService.Execute(operation);
+            _view.UpdateNumbers(numbers);
             ShowList();
         }
 
-        //private void SetData1(List<Double> numbers)          //new
-        //{
-        //    _calculateService.SetData(numbers);
-        //}   
+        private void SetData1(List<Double> numbers)          //new
+        {
+            _calculateService.SetData(numbers);
+        }
 
 
         private void ClickProbel()

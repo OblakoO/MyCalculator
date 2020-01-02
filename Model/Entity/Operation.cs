@@ -20,5 +20,6 @@ namespace Model.Entity
         }
 
         public abstract List<Double> execute(ref List<Double> numbers);
+        
     }
 }
