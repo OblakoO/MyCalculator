@@ -59,15 +59,15 @@ namespace Presenter
             _view.ShowList(_calculateService.GetHistory());
         }
 
-        public void UpdateNumbers(List<Double> numbers)   //new
-        {
-            _view.UpdateNumbers(numbers);
-        }
+        //public void UpdateNumbers(List<Double> numbers)   //new
+        //{
+        //    _view.UpdateNumbers(numbers);
+        //}
 
         private void ExecuteOperationExecute(Operation operation) //new
         {
             List<Double> numbers = _calculateService.Execute(operation);
-            _view.UpdateNumbers(numbers);
+            ShowList();
         }
 
         private void SetData1(List<Double> numbers)          //new

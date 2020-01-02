@@ -8,8 +8,17 @@ using System.Threading.Tasks;
 
 namespace Model.Service
 {
-    public class CalculatorService: ICalculatorService
+    public class CalculatorService : ICalculatorService
     {
+
+        public CalculatorService()
+        {
+            historyOfOperation = new DataTable();
+            historyOfOperation.Columns.Add("Commands");
+            historyOfOperation.Columns.Add("Numbers");
+        }
+
+
         private String resultNumber = "";
         private String resultNumber2 = "";
         List<Double> numbers = new List<Double>();
@@ -17,16 +26,28 @@ namespace Model.Service
         private Stack<Operation> executedOperations = new Stack<Operation>();
         private Stack<Operation> expectedOperations = new Stack<Operation>();
 
+        
 
 
         private DataTable historyOfOperation; //new
         
         public DataTable GetHistory()  //new
         {
+            AddNewRow();
             return historyOfOperation;
         }
 
+        public void AddNewRow()
+        {
+            
+            DataRow dataRow = historyOfOperation.NewRow();
+            dataRow["Commands"] =resultNumber2;
+            dataRow["Numbers"] = resultNumber;
 
+            historyOfOperation.Rows.Add(dataRow);
+            
+            //return historyOfOperation;
+        }
 
         //для окошек заполнения цифр
         public String GetResult()

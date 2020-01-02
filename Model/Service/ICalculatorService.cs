@@ -10,6 +10,7 @@ namespace Model.Service
 {
     public interface ICalculatorService {
         DataTable GetHistory();   //new
+        void AddNewRow();   //new
         //для окошек заполнения цифрами
         String GetResult();
         String GetResult2();

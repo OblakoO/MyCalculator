@@ -213,11 +213,20 @@ namespace Calculator
             start = true;
         }
 
+
+
+        public void ShowList(DataTable dataTable)     //new
+        {
+            grid_History.DataSource = dataTable;
+        }
+
+
         //кнопки действий
         public void UpdateNumbers(List<Double> numbers)
         {
             //string result = "";
-            //result += string.Join(" ", numbers);
+           // result += string.Join(" ", numbers);
+
 
             //string tempStr = data.Text;
             //tempStr += "\n" + result;
@@ -226,7 +235,8 @@ namespace Calculator
 
         private void b_plus_Click(object sender, EventArgs e)
         {
-            //OperationExecuteEvent?.Invoke(new Summa(Double.Parse(textBox4.Text)));
+            OperationExecuteEvent?.Invoke(new Summa(Double.Parse(textBox4.Text)));
+            
         }
 
         private void b_equally_Click(object sender, EventArgs e)
