@@ -24,6 +24,9 @@ namespace Presenter
             _calculateService = calculateService;
             _view = view;
 
+            _view.OperationEvent += OperationEvent;
+            _view.ClickDelete += ClickDelete;
+
             _view.Number0v2 += Number0v2;
             _view.Number1v2 += Number1v2;
             _view.Number2v2 += Number2v2;
@@ -54,20 +57,20 @@ namespace Presenter
 
         }
 
+        private void OperationEvent()
+        {
+            ShowInfo();
+        }
+
         public void ShowList()
         {
             _view.ShowList(_calculateService.GetHistory());
         }
 
-        public void UpdateNumbers(List<Double> numbers)   //new
-        {
-            _view.UpdateNumbers(numbers);
-        }
-
         private void ExecuteOperationExecute(Operation operation) //new
         {
             List<Double> numbers = _calculateService.Execute(operation);
-            _view.UpdateNumbers(numbers);
+
             ShowList();
         }
 
@@ -96,7 +99,10 @@ namespace Presenter
             ShowInfo2();
         }
 
+        private void ClickDelete()   //доделать
+        {
 
+        }
 
         private void ShowInfo()
         {

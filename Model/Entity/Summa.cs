@@ -12,13 +12,11 @@ namespace Model.Entity
         {
         }
 
-        public string Name { get { return "+"; } }
-
         public override List<Double> execute(ref List<Double> numbers)
         {
             for (int i = 0; i < numbers.Count; i++)
             {
-                numbers[i] += number;
+                numbers[i] += Math.Round(number,3);
             }
             return numbers;
         }

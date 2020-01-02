@@ -18,11 +18,10 @@ namespace Model.Service
             historyOfOperation.Columns.Add("Numbers");
         }
 
-
+        private string result = "";
         private String resultNumber = "";
         private String resultNumber2 = "";
         List<Double> numbers = new List<Double>();
-        //List<Double> numbers2 = new List<Double>();
         private Stack<Operation> executedOperations = new Stack<Operation>();
         private Stack<Operation> expectedOperations = new Stack<Operation>();
 
@@ -39,14 +38,21 @@ namespace Model.Service
 
         public void AddNewRow()
         {
-            
+            UpdateNumbers(numbers);
             DataRow dataRow = historyOfOperation.NewRow();
             dataRow["Commands"] = resultNumber2;
-            dataRow["Numbers"] = numbers;
+            dataRow["Numbers"] = result;
 
             historyOfOperation.Rows.Add(dataRow);
-            
-            //return historyOfOperation;
+
+            resultNumber = result;
+            GetResult();
+        }
+
+        public void UpdateNumbers(List<Double> numbers)
+        {
+            result = "";
+            result += string.Join(" ", numbers);
         }
 
         //для окошек заполнения цифр
@@ -81,6 +87,7 @@ namespace Model.Service
         {
             executedOperations.Push(operation);
             return operation.execute(ref numbers);
+
         }
     }
 }

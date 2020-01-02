@@ -9,6 +9,9 @@ namespace Presenter
 {
     public interface ICalculatorView
     {
+        event Action OperationEvent;
+        event Action ClickDelete;
+
         event Action Number0v2;
         event Action Number1v2;
         event Action Number2v2;
@@ -37,8 +40,7 @@ namespace Presenter
         event Delegat.OperationExecuteDelegate OperationExecuteEvent;
 
         event Delegat.SetData1 SetData;
-        //event Delegat.SetData2 SetData2;
-
+ 
         string NumberZero { get; }
         string NumberOne { get; }
         string NumberTwo { get; }
@@ -54,7 +56,6 @@ namespace Presenter
 
         void ShowList(DataTable dataTable); //new
 
-        void UpdateNumbers(List<Double> numbers); //new
         void ShowInfo(string resultNow);
         void ShowInfo2(string resultNow2);     
         void Show();

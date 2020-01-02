@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace Model.Entity
 {
-    class Minus
+    public class Minus: Operation
     {
+        public Minus(Double number) : base(number)
+        {
+        }
+
+        public override List<Double> execute(ref List<Double> numbers)
+        {
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                numbers[i] -= Math.Round(number, 3);
+            }
+            return numbers;
+        }
     }
 }

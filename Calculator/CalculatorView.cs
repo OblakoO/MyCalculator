@@ -18,6 +18,8 @@ namespace Calculator
     {
         private ApplicationContext _applicationContext;
 
+        public event Action OperationEvent;
+
         public event Action Number0v2;          
         public event Action Number1v2;
         public event Action Number2v2;
@@ -43,9 +45,10 @@ namespace Calculator
         public event Action ClickDot;
         public event Action ClickProbel;
 
+        public event Action ClickDelete;
+
         public event Delegat.OperationExecuteDelegate OperationExecuteEvent;
         public event Delegat.SetData1 SetData;
-        //public event Delegat.SetData2 SetData2;
 
         public string NumberZero => button0.Text;
         public string NumberOne => button1.Text;
@@ -212,36 +215,181 @@ namespace Calculator
         {
             start = true;
         }
-
-
-
         public void ShowList(DataTable dataTable)     //new
         {
             grid_History.DataSource = dataTable;
         }
 
-
         //кнопки действий
-        public void UpdateNumbers(List<Double> numbers)
-        {
-            string result = "";
-            result += string.Join(" ", numbers);
-
-
-            //string tempStr = data.Text;
-            //tempStr += "\n" + result;
-            //data.Text = tempStr;
-        }
 
         private void b_plus_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "" || textBox4.Text == "")
+            {
+                MessageBox.Show("Одно из полей не заполнено");
+            }
+            else
             if (start == true)
             {
+                
                 Update();
                 OperationExecuteEvent?.Invoke(new Summa(Double.Parse(textBox4.Text)));
+                OperationEvent?.Invoke();
             }
-            
-            
+        }
+        private void b_minus_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "" || textBox4.Text == "")
+            {
+                MessageBox.Show("Одно из полей не заполнено");
+            }
+            else
+               if (start == true)
+            {
+                Update();
+                OperationExecuteEvent?.Invoke(new Minus(Double.Parse(textBox4.Text)));
+                OperationEvent?.Invoke();
+            }
+        }
+        private void b_multiply_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "" || textBox4.Text == "")
+            {
+                MessageBox.Show("Одно из полей не заполнено");
+            }
+            else
+               if (start == true)
+            {
+                Update();
+                OperationExecuteEvent?.Invoke(new Umno(Double.Parse(textBox4.Text)));
+                OperationEvent?.Invoke();
+            }
+        }
+        private void b_divide_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "" || textBox4.Text == "")
+            {
+                MessageBox.Show("Одно из полей не заполнено");
+            }
+            else
+               if (start == true)
+            {
+                Update();
+                OperationExecuteEvent?.Invoke(new Podel(Double.Parse(textBox4.Text)));
+                OperationEvent?.Invoke();
+            }
+        }
+        private void b_stepen2_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Поле не заполнено");
+            }
+            else
+               if (start == true)
+            {
+                Update();
+                OperationExecuteEvent?.Invoke(new Vozv2());
+                OperationEvent?.Invoke();
+            }
+        }
+        private void b_sepen_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "" || textBox4.Text == "")
+            {
+                MessageBox.Show("Одно из полей не заполнено");
+            }
+            else
+               if (start == true)
+            {
+                Update();
+                OperationExecuteEvent?.Invoke(new Vozv(Double.Parse(textBox4.Text)));
+                OperationEvent?.Invoke();
+            }
+        }
+        private void b_sqrt2_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Поле не заполнено");
+            }
+            else
+               if (start == true)
+            {
+                Update();
+                OperationExecuteEvent?.Invoke(new Koren2());
+                OperationEvent?.Invoke();
+            }
+        }
+        private void b_sqrt_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "" || textBox4.Text == "")
+            {
+                MessageBox.Show("Одно из полей не заполнено");
+            }
+            else
+               if (start == true)
+            {
+                Update();
+                OperationExecuteEvent?.Invoke(new Koren(Double.Parse(textBox4.Text)));
+                OperationEvent?.Invoke();
+            }
+        }
+        private void b_log_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "" || textBox4.Text == "")
+            {
+                MessageBox.Show("Одно из полей не заполнено");
+            }
+            else
+               if (start == true)
+            {
+                Update();
+                OperationExecuteEvent?.Invoke(new Log(Double.Parse(textBox4.Text)));
+                OperationEvent?.Invoke();
+            }
+        }
+        private void b_fact_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Поле не заполнено");
+            }
+            else
+               if (start == true)
+            {
+                Update();
+                OperationExecuteEvent?.Invoke(new Factorial());
+                OperationEvent?.Invoke();
+            }
+        }
+        private void b_med_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Поле не заполнено");
+            }
+            else
+               if (start == true)
+            {
+                Update();
+                OperationExecuteEvent?.Invoke(new Mediana());
+                OperationEvent?.Invoke();
+            }
+        }     
+        private void b_std_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Поле не заполнено");
+            }
+            else
+               if (start == true)
+            {
+                Update();
+                OperationExecuteEvent?.Invoke(new STD());
+                OperationEvent?.Invoke();
+            }
         }
 
         public void Update()
@@ -301,6 +449,10 @@ namespace Calculator
 
         }
 
-        
+        private void b_Delete_Click(object sender, EventArgs e)
+        {
+          
+            ClickDelete?.Invoke();
+        }
     }
 }

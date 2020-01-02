@@ -176,7 +176,7 @@
             this.b_dot.Name = "b_dot";
             this.b_dot.Size = new System.Drawing.Size(60, 60);
             this.b_dot.TabIndex = 10;
-            this.b_dot.Text = ".";
+            this.b_dot.Text = ",";
             this.b_dot.UseVisualStyleBackColor = true;
             this.b_dot.Click += new System.EventHandler(this.b_dot_Click);
             // 
@@ -200,6 +200,7 @@
             this.b_minus.TabIndex = 12;
             this.b_minus.Text = "-";
             this.b_minus.UseVisualStyleBackColor = false;
+            this.b_minus.Click += new System.EventHandler(this.b_minus_Click);
             // 
             // b_multiply
             // 
@@ -210,6 +211,7 @@
             this.b_multiply.TabIndex = 13;
             this.b_multiply.Text = "x";
             this.b_multiply.UseVisualStyleBackColor = false;
+            this.b_multiply.Click += new System.EventHandler(this.b_multiply_Click);
             // 
             // b_divide
             // 
@@ -220,6 +222,7 @@
             this.b_divide.TabIndex = 14;
             this.b_divide.Text = "/";
             this.b_divide.UseVisualStyleBackColor = false;
+            this.b_divide.Click += new System.EventHandler(this.b_divide_Click);
             // 
             // b_stepen2
             // 
@@ -230,6 +233,7 @@
             this.b_stepen2.TabIndex = 15;
             this.b_stepen2.Text = "X^2";
             this.b_stepen2.UseVisualStyleBackColor = false;
+            this.b_stepen2.Click += new System.EventHandler(this.b_stepen2_Click);
             // 
             // b_sepen
             // 
@@ -240,6 +244,7 @@
             this.b_sepen.TabIndex = 16;
             this.b_sepen.Text = "X^Y";
             this.b_sepen.UseVisualStyleBackColor = false;
+            this.b_sepen.Click += new System.EventHandler(this.b_sepen_Click);
             // 
             // b_sqrt2
             // 
@@ -250,6 +255,7 @@
             this.b_sqrt2.TabIndex = 17;
             this.b_sqrt2.Text = "sqrt";
             this.b_sqrt2.UseVisualStyleBackColor = false;
+            this.b_sqrt2.Click += new System.EventHandler(this.b_sqrt2_Click);
             // 
             // b_sqrt
             // 
@@ -260,6 +266,7 @@
             this.b_sqrt.TabIndex = 18;
             this.b_sqrt.Text = "sqrt (!=2)";
             this.b_sqrt.UseVisualStyleBackColor = false;
+            this.b_sqrt.Click += new System.EventHandler(this.b_sqrt_Click);
             // 
             // b_equally
             // 
@@ -281,6 +288,7 @@
             this.b_log.TabIndex = 20;
             this.b_log.Text = "log";
             this.b_log.UseVisualStyleBackColor = false;
+            this.b_log.Click += new System.EventHandler(this.b_log_Click);
             // 
             // b_fact
             // 
@@ -291,6 +299,7 @@
             this.b_fact.TabIndex = 21;
             this.b_fact.Text = "!";
             this.b_fact.UseVisualStyleBackColor = false;
+            this.b_fact.Click += new System.EventHandler(this.b_fact_Click);
             // 
             // b_med
             // 
@@ -301,6 +310,7 @@
             this.b_med.TabIndex = 22;
             this.b_med.Text = "med";
             this.b_med.UseVisualStyleBackColor = false;
+            this.b_med.Click += new System.EventHandler(this.b_med_Click);
             // 
             // b_std
             // 
@@ -311,6 +321,7 @@
             this.b_std.TabIndex = 23;
             this.b_std.Text = "std";
             this.b_std.UseVisualStyleBackColor = false;
+            this.b_std.Click += new System.EventHandler(this.b_std_Click);
             // 
             // grid_History
             // 
@@ -447,6 +458,7 @@
             this.b_Delete.TabIndex = 41;
             this.b_Delete.Text = "Delete";
             this.b_Delete.UseVisualStyleBackColor = false;
+            this.b_Delete.Click += new System.EventHandler(this.b_Delete_Click);
             // 
             // b_Start
             // 
