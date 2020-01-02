@@ -1,13 +1,16 @@
 ﻿using Model.Entity;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Model.Service
 {
-    public interface ICalculatorService { 
+    public interface ICalculatorService {
+        DataTable GetHistory();   //new
+        //для окошек заполнения цифрами
         String GetResult();
         String GetResult2();
         String CurrentNumber(string number);

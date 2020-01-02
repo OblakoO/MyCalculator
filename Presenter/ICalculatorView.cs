@@ -8,7 +8,7 @@ namespace Presenter
 {
     public interface ICalculatorView
     {
-        event Action Number0v2; //new
+        event Action Number0v2;
         event Action Number1v2;
         event Action Number2v2;
         event Action Number3v2;
@@ -51,9 +51,11 @@ namespace Presenter
         string Dot { get;  }
         string Probel { get; }
 
+        void ShowList(DataTable dataTable); //new
 
+        void UpdateNumbers(List<Double> numbers); //new
         void ShowInfo(string resultNow);
-        void ShowInfo2(string resultNow2);     //new
+        void ShowInfo2(string resultNow2);     
         void Show();
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Model.Entity;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,18 @@ namespace Model.Service
         private Stack<Operation> executedOperations = new Stack<Operation>();
         private Stack<Operation> expectedOperations = new Stack<Operation>();
 
+
+
+        private DataTable historyOfOperation; //new
+        
+        public DataTable GetHistory()  //new
+        {
+            return historyOfOperation;
+        }
+
+
+
+        //для окошек заполнения цифр
         public String GetResult()
         {
             return resultNumber;
@@ -40,13 +53,6 @@ namespace Model.Service
             executedOperations.Clear();
             expectedOperations.Clear();
         }
-
-        //public void SetData2(List<Double> bigIntegers)
-        //{
-        //    numbers2 = new List<Double>(bigIntegers);
-        //    executedOperations.Clear();
-        //    expectedOperations.Clear();
-        //}
         public List<Double> Execute(Operation operation)
         {
             executedOperations.Push(operation);

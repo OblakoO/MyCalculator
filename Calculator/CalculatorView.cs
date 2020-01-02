@@ -18,7 +18,7 @@ namespace Calculator
     {
         private ApplicationContext _applicationContext;
 
-        public event Action Number0v2;           //new
+        public event Action Number0v2;          
         public event Action Number1v2;
         public event Action Number2v2;
         public event Action Number3v2;
@@ -82,7 +82,6 @@ namespace Calculator
             }
                 
         }
-        
         private void button1_Click(object sender, EventArgs e)
         {
             if (start == false)
@@ -94,7 +93,6 @@ namespace Calculator
                 Number1v2?.Invoke();
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (start == false)
@@ -106,7 +104,6 @@ namespace Calculator
                 Number2v2?.Invoke();
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (start == false)
@@ -118,7 +115,6 @@ namespace Calculator
                 Number3v2?.Invoke();
             }
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             if (start == false)
@@ -130,7 +126,6 @@ namespace Calculator
                 Number4v2?.Invoke();
             }
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             if (start == false)
@@ -142,7 +137,6 @@ namespace Calculator
                 Number5v2?.Invoke();
             }
         }
-
         private void button6_Click(object sender, EventArgs e)
         {
             if (start == false)
@@ -154,7 +148,6 @@ namespace Calculator
                 Number6v2?.Invoke();
             }
         }
-
         private void button7_Click(object sender, EventArgs e)
         {
             if (start == false)
@@ -166,7 +159,6 @@ namespace Calculator
                 Number7v2?.Invoke();
             }
         }
-
         private void button8_Click(object sender, EventArgs e)
         {
             if (start == false)
@@ -178,7 +170,6 @@ namespace Calculator
                 Number8v2?.Invoke();
             }
         }
-
         private void button9_Click(object sender, EventArgs e)
         {
             if (start == false)
@@ -190,7 +181,6 @@ namespace Calculator
                 Number9v2?.Invoke();
             }
         }
-
         private void b_dot_Click(object sender, EventArgs e)
         {
             if (start == false)
@@ -202,7 +192,6 @@ namespace Calculator
                 ClickDotv2?.Invoke();
             }
         }
-
         private void b_Probel_Click(object sender, EventArgs e)
         {
             if(start == false)
@@ -215,18 +204,25 @@ namespace Calculator
         {
                 textBox1.Text = resultNow;
         }
-
         public void ShowInfo2(string resultNow2)
         {
                 textBox4.Text = resultNow2;
         }
-
         private void b_Start_Click(object sender, EventArgs e)
         {
             start = true;
         }
 
         //кнопки действий
+        public void UpdateNumbers(List<Double> numbers)
+        {
+            //string result = "";
+            //result += string.Join(" ", numbers);
+
+            //string tempStr = data.Text;
+            //tempStr += "\n" + result;
+            //data.Text = tempStr;
+        }
 
         private void b_plus_Click(object sender, EventArgs e)
         {
