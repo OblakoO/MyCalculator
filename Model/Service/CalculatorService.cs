@@ -18,6 +18,7 @@ namespace Model.Service
             historyOfOperation.Columns.Add("Numbers");
         }
 
+        private string thisznak = "";
         private string result = "";
         private String resultNumber = "";
         private String resultNumber2 = "";
@@ -40,19 +41,26 @@ namespace Model.Service
         {
             UpdateNumbers(numbers);
             DataRow dataRow = historyOfOperation.NewRow();
-            dataRow["Commands"] = resultNumber2;
+            dataRow["Commands"] =thisznak + resultNumber2;
             dataRow["Numbers"] = result;
 
             historyOfOperation.Rows.Add(dataRow);
 
             resultNumber = result;
             resultNumber2 = "";
+            thisznak = "";
         }
 
         public void UpdateNumbers(List<Double> numbers)
         {
             result = "";
             result += string.Join(" ", numbers);
+        }
+
+        public String Znak(string znak)
+        {
+            thisznak = znak;
+            return thisznak;
         }
 
         //для окошек заполнения цифр

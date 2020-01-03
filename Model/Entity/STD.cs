@@ -10,11 +10,6 @@ namespace Model.Entity
     {
         public override List<Double> execute(ref List<Double> numbers)
         {
-            return StandardDeviation(numbers);
-        }
-
-        public List<Double> StandardDeviation(List<Double> numbers)
-        {
             List<Double> values = numbers.Select(integer => (Double)integer).ToList();
             Double ret = 0;
             int count = values.Count();
@@ -22,11 +17,12 @@ namespace Model.Entity
             {
                 Double avg = values.Average();
                 Double sum = values.Sum(d => (d - avg) * (d - avg));
-                ret = Math.Sqrt(sum / count);
+                ret = Math.Round(Math.Sqrt(sum / count),3);
             }
             var bigIntegers = new List<Double>();
             bigIntegers.Add(ret);
-            return bigIntegers;
+            numbers = bigIntegers;
+            return numbers;
         }
     }
 }

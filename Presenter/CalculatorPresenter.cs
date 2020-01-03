@@ -25,6 +25,19 @@ namespace Presenter
             _view = view;
 
             _view.OperationEvent += OperationEvent;
+            _view.ZnakPlus += ZnakPlus;
+            _view.ZnakMinus += ZnakMinus;
+            _view.ZnakMultiply += ZnakMultiply;
+            _view.ZnakDivide+= ZnakDivide;
+            _view.ZnakStepen2 += ZnakStepen2;
+            _view.ZnakStepen += ZnakStepen;
+            _view.ZnakSqrt += ZnakSqrt;
+            _view.ZnakSqrt2 += ZnakSqrt2;
+            _view.ZnakLog += ZnakLog;
+            _view.ZnakFact += ZnakFact;
+            _view.ZnakMed += ZnakMed;
+            _view.ZnakSTD += ZnakSTD;
+
 
             _view.Number0v2 += Number0v2;
             _view.Number1v2 += Number1v2;
@@ -54,6 +67,77 @@ namespace Presenter
             _view.SetData += SetData1;
             _view.OperationExecuteEvent += ExecuteOperationExecute;  //new
 
+        }
+
+        private void ZnakSTD()
+        {
+            string znak = "STD";
+            _calculateService.Znak(znak);
+        }
+
+        private void ZnakMed()
+        {
+            string znak = "Mediana";
+            _calculateService.Znak(znak);
+        }
+
+        private void ZnakFact()
+        {
+            string znak = "!";
+            _calculateService.Znak(znak);
+        }
+
+        private void ZnakLog()
+        {
+            string znak = "log ";
+            _calculateService.Znak(znak);
+        }
+
+        private void ZnakSqrt2()
+        {
+            string znak = "^1/2";
+            _calculateService.Znak(znak);
+        }
+
+        private void ZnakSqrt()
+        {
+            string znak = "^1/";
+            _calculateService.Znak(znak);
+        }
+
+        private void ZnakStepen()
+        {
+            string znak = "^";
+            _calculateService.Znak(znak);
+        }
+
+        private void ZnakStepen2()
+        {
+            string znak = "^2";
+            _calculateService.Znak(znak);
+        }
+
+        private void ZnakDivide()
+        {
+            string znak = ":";
+            _calculateService.Znak(znak);
+        }
+
+        private void ZnakMultiply()
+        {
+            string znak = "x";
+            _calculateService.Znak(znak);
+        }
+
+        private void ZnakPlus()
+        {
+            string znak = "+";
+            _calculateService.Znak(znak);
+        }
+        private void ZnakMinus()
+        {
+            string znak = "-";
+            _calculateService.Znak(znak);
         }
 
         private void OperationEvent()

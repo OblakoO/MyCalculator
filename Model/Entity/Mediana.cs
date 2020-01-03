@@ -10,11 +10,6 @@ namespace Model.Entity
     {
         public override List<Double> execute(ref List<Double> numbers)
         {
-            return fMediana(numbers);
-        }
-
-        private List<Double> fMediana(List<Double> numbers)
-        {
             int numberCount = numbers.Count();
             int halfIndex = numbers.Count() / 2;
             var sortedNumbers = numbers.OrderBy(n => n);
@@ -31,7 +26,8 @@ namespace Model.Entity
 
             var newNumber = new List<Double>();
             newNumber.Add(median);
-            return newNumber;
+            numbers = newNumber;
+            return numbers;
         }
     }
 }

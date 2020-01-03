@@ -14,6 +14,7 @@ namespace Model.Service
         //для окошек заполнения цифрами
         String GetResult();
         String GetResult2();
+        String Znak(string znak);
         String CurrentNumber(string number);
         String CurrentNumber2(string number);
         void SetData(List<Double> bigIntegers);

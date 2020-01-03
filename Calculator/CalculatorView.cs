@@ -20,6 +20,19 @@ namespace Calculator
 
         public event Action OperationEvent;
 
+        public event Action ZnakPlus;
+        public event Action ZnakMinus;
+        public event Action ZnakMultiply;
+        public event Action ZnakDivide;
+        public event Action ZnakStepen2;
+        public event Action ZnakStepen;
+        public event Action ZnakSqrt;
+        public event Action ZnakSqrt2;
+        public event Action ZnakLog;
+        public event Action ZnakFact;
+        public event Action ZnakMed;
+        public event Action ZnakSTD;
+
         public event Action Number0v2;          
         public event Action Number1v2;
         public event Action Number2v2;
@@ -63,6 +76,7 @@ namespace Calculator
 
         public bool start = false;
         public bool ravno = false;
+        public string znak;
 
         public CalculatorView(ApplicationContext applicationContext)
         {
@@ -230,7 +244,7 @@ namespace Calculator
             else
             if (start == true && ravno == false)
             {
-                
+                ZnakPlus?.Invoke();
                 Update();
                 OperationExecuteEvent?.Invoke(new Summa(Double.Parse(textBox4.Text)));
                 OperationEvent?.Invoke();
@@ -245,6 +259,7 @@ namespace Calculator
             else
                if (start == true && ravno == false)
             {
+                ZnakMinus?.Invoke();
                 Update();
                 OperationExecuteEvent?.Invoke(new Minus(Double.Parse(textBox4.Text)));
                 OperationEvent?.Invoke();
@@ -259,6 +274,7 @@ namespace Calculator
             else
                if (start == true && ravno == false)
             {
+                ZnakMultiply?.Invoke();
                 Update();
                 OperationExecuteEvent?.Invoke(new Umno(Double.Parse(textBox4.Text)));
                 OperationEvent?.Invoke();
@@ -273,6 +289,7 @@ namespace Calculator
             else
                if (start == true && ravno == false)
             {
+                ZnakDivide?.Invoke();
                 Update();
                 OperationExecuteEvent?.Invoke(new Podel(Double.Parse(textBox4.Text)));
                 OperationEvent?.Invoke();
@@ -287,6 +304,7 @@ namespace Calculator
             else
                if (start == true && ravno == false)
             {
+                ZnakStepen2?.Invoke();
                 Update();
                 OperationExecuteEvent?.Invoke(new Vozv2());
                 OperationEvent?.Invoke();
@@ -301,6 +319,7 @@ namespace Calculator
             else
                if (start == true && ravno == false)
             {
+                ZnakStepen?.Invoke();
                 Update();
                 OperationExecuteEvent?.Invoke(new Vozv(Double.Parse(textBox4.Text)));
                 OperationEvent?.Invoke();
@@ -315,6 +334,7 @@ namespace Calculator
             else
                if (start == true && ravno == false)
             {
+                ZnakSqrt2?.Invoke();
                 Update();
                 OperationExecuteEvent?.Invoke(new Koren2());
                 OperationEvent?.Invoke();
@@ -329,6 +349,7 @@ namespace Calculator
             else
                if (start == true && ravno == false)
             {
+                ZnakSqrt?.Invoke();
                 Update();
                 OperationExecuteEvent?.Invoke(new Koren(Double.Parse(textBox4.Text)));
                 OperationEvent?.Invoke();
@@ -343,6 +364,7 @@ namespace Calculator
             else
                if (start == true && ravno == false)
             {
+                ZnakLog?.Invoke();
                 Update();
                 OperationExecuteEvent?.Invoke(new Log(Double.Parse(textBox4.Text)));
                 OperationEvent?.Invoke();
@@ -357,6 +379,7 @@ namespace Calculator
             else
                if (start == true && ravno == false)
             {
+                ZnakFact?.Invoke();
                 Update();
                 OperationExecuteEvent?.Invoke(new Factorial());
                 OperationEvent?.Invoke();
@@ -371,6 +394,7 @@ namespace Calculator
             else
                if (start == true && ravno == false)
             {
+                ZnakMed?.Invoke();
                 Update();
                 OperationExecuteEvent?.Invoke(new Mediana());
                 OperationEvent?.Invoke();
@@ -385,6 +409,7 @@ namespace Calculator
             else
                if (start == true && ravno == false)
             {
+                ZnakSTD?.Invoke();
                 Update();
                 OperationExecuteEvent?.Invoke(new STD());
                 OperationEvent?.Invoke();

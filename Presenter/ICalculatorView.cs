@@ -11,6 +11,19 @@ namespace Presenter
     {
         event Action OperationEvent;
 
+        event Action ZnakPlus;
+        event Action ZnakMinus;
+        event Action ZnakMultiply;
+        event Action ZnakDivide;
+        event Action ZnakStepen2;
+        event Action ZnakStepen;
+        event Action ZnakSqrt;
+        event Action ZnakSqrt2;
+        event Action ZnakLog;
+        event Action ZnakFact;
+        event Action ZnakMed;
+        event Action ZnakSTD;
+
         event Action Number0v2;
         event Action Number1v2;
         event Action Number2v2;
