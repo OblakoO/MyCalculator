@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Model.Entity;
 using Presenter;
 using Model;
-
+using System.IO;
 
 namespace Calculator
 {
@@ -45,8 +45,6 @@ namespace Calculator
         public event Action ClickDot;
         public event Action ClickProbel;
 
-        public event Action ClickDelete;
-
         public event Delegat.OperationExecuteDelegate OperationExecuteEvent;
         public event Delegat.SetData1 SetData;
 
@@ -64,6 +62,7 @@ namespace Calculator
         public string Probel => b_Probel.Text;
 
         public bool start = false;
+        public bool ravno = false;
 
         public CalculatorView(ApplicationContext applicationContext)
         {
@@ -224,12 +223,12 @@ namespace Calculator
 
         private void b_plus_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox4.Text == "")
+            if (ravno == false &&(textBox1.Text == "" || textBox4.Text == ""))
             {
                 MessageBox.Show("Одно из полей не заполнено");
             }
             else
-            if (start == true)
+            if (start == true && ravno == false)
             {
                 
                 Update();
@@ -239,12 +238,12 @@ namespace Calculator
         }
         private void b_minus_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox4.Text == "")
+            if (ravno == false && (textBox1.Text == "" || textBox4.Text == ""))
             {
                 MessageBox.Show("Одно из полей не заполнено");
             }
             else
-               if (start == true)
+               if (start == true && ravno == false)
             {
                 Update();
                 OperationExecuteEvent?.Invoke(new Minus(Double.Parse(textBox4.Text)));
@@ -253,12 +252,12 @@ namespace Calculator
         }
         private void b_multiply_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox4.Text == "")
+            if (ravno == false && (textBox1.Text == "" || textBox4.Text == ""))
             {
                 MessageBox.Show("Одно из полей не заполнено");
             }
             else
-               if (start == true)
+               if (start == true && ravno == false)
             {
                 Update();
                 OperationExecuteEvent?.Invoke(new Umno(Double.Parse(textBox4.Text)));
@@ -267,12 +266,12 @@ namespace Calculator
         }
         private void b_divide_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox4.Text == "")
+            if (ravno == false && (textBox1.Text == "" || textBox4.Text == ""))
             {
                 MessageBox.Show("Одно из полей не заполнено");
             }
             else
-               if (start == true)
+               if (start == true && ravno == false)
             {
                 Update();
                 OperationExecuteEvent?.Invoke(new Podel(Double.Parse(textBox4.Text)));
@@ -286,7 +285,7 @@ namespace Calculator
                 MessageBox.Show("Поле не заполнено");
             }
             else
-               if (start == true)
+               if (start == true && ravno == false)
             {
                 Update();
                 OperationExecuteEvent?.Invoke(new Vozv2());
@@ -295,12 +294,12 @@ namespace Calculator
         }
         private void b_sepen_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox4.Text == "")
+            if (ravno == false && (textBox1.Text == "" || textBox4.Text == ""))
             {
                 MessageBox.Show("Одно из полей не заполнено");
             }
             else
-               if (start == true)
+               if (start == true && ravno == false)
             {
                 Update();
                 OperationExecuteEvent?.Invoke(new Vozv(Double.Parse(textBox4.Text)));
@@ -314,7 +313,7 @@ namespace Calculator
                 MessageBox.Show("Поле не заполнено");
             }
             else
-               if (start == true)
+               if (start == true && ravno == false)
             {
                 Update();
                 OperationExecuteEvent?.Invoke(new Koren2());
@@ -323,12 +322,12 @@ namespace Calculator
         }
         private void b_sqrt_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox4.Text == "")
+            if (ravno == false && (textBox1.Text == "" || textBox4.Text == ""))
             {
                 MessageBox.Show("Одно из полей не заполнено");
             }
             else
-               if (start == true)
+               if (start == true && ravno == false)
             {
                 Update();
                 OperationExecuteEvent?.Invoke(new Koren(Double.Parse(textBox4.Text)));
@@ -337,12 +336,12 @@ namespace Calculator
         }
         private void b_log_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox4.Text == "")
+            if (ravno == false && (textBox1.Text == "" || textBox4.Text == ""))
             {
                 MessageBox.Show("Одно из полей не заполнено");
             }
             else
-               if (start == true)
+               if (start == true && ravno == false)
             {
                 Update();
                 OperationExecuteEvent?.Invoke(new Log(Double.Parse(textBox4.Text)));
@@ -356,7 +355,7 @@ namespace Calculator
                 MessageBox.Show("Поле не заполнено");
             }
             else
-               if (start == true)
+               if (start == true && ravno == false)
             {
                 Update();
                 OperationExecuteEvent?.Invoke(new Factorial());
@@ -370,7 +369,7 @@ namespace Calculator
                 MessageBox.Show("Поле не заполнено");
             }
             else
-               if (start == true)
+               if (start == true && ravno == false)
             {
                 Update();
                 OperationExecuteEvent?.Invoke(new Mediana());
@@ -384,12 +383,38 @@ namespace Calculator
                 MessageBox.Show("Поле не заполнено");
             }
             else
-               if (start == true)
+               if (start == true && ravno == false)
             {
                 Update();
                 OperationExecuteEvent?.Invoke(new STD());
                 OperationEvent?.Invoke();
             }
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)    //import
+        {
+            if (ravno == false)
+            {
+                StreamReader sr = new StreamReader(Application.StartupPath + "\\input.txt");
+                List<Double> bigIntegers = new List<Double>();
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    bigIntegers.Add(Double.Parse(line));
+                }
+                SetData?.Invoke(bigIntegers);
+                OperationExecuteEvent?.Invoke(new Import());
+                OperationEvent?.Invoke();
+                start = true;
+            }
+        }
+        private void button11_Click(object sender, EventArgs e)   //export
+        {
+            StreamWriter sw = new StreamWriter(Application.StartupPath + "\\output.txt");
+            string[] strings = textBox1.Text.Split(' ');
+            List<Double> bigIntegers = strings.Select(numberString => Double.Parse(numberString)).ToList();
+            bigIntegers.ForEach(number => sw.WriteLine(number));
+            sw.Close();
         }
 
         public void Update()
@@ -401,7 +426,8 @@ namespace Calculator
 
         private void b_equally_Click(object sender, EventArgs e)
         {
-            
+            ravno = true;
+            MessageBox.Show("Расчёт окончен. Вы можете только экспортировать результаты в файл.");
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -429,15 +455,9 @@ namespace Calculator
 
         }
 
-        private void button10_Click_1(object sender, EventArgs e)
-        {
 
-        }
 
-        private void button11_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -447,12 +467,6 @@ namespace Calculator
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void b_Delete_Click(object sender, EventArgs e)
-        {
-          
-            ClickDelete?.Invoke();
         }
     }
 }

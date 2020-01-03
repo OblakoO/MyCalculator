@@ -25,7 +25,6 @@ namespace Presenter
             _view = view;
 
             _view.OperationEvent += OperationEvent;
-            _view.ClickDelete += ClickDelete;
 
             _view.Number0v2 += Number0v2;
             _view.Number1v2 += Number1v2;
@@ -60,6 +59,7 @@ namespace Presenter
         private void OperationEvent()
         {
             ShowInfo();
+            ShowInfo2();
         }
 
         public void ShowList()
@@ -97,11 +97,6 @@ namespace Presenter
             string dot = _view.Dot;
             _calculateService.CurrentNumber2(dot);
             ShowInfo2();
-        }
-
-        private void ClickDelete()   //доделать
-        {
-
         }
 
         private void ShowInfo()

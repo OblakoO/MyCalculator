@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Factorial.cs" />
+    <Compile Include="Entity\Import.cs" />
     <Compile Include="Entity\Koren.cs" />
     <Compile Include="Entity\Koren2.cs" />
     <Compile Include="Entity\Log.cs" />

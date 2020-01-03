@@ -65,7 +65,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.b_Delete = new System.Windows.Forms.Button();
             this.b_Start = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid_History)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +78,7 @@
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+
             // 
             // button2
             // 
@@ -89,6 +89,7 @@
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+
             // 
             // button3
             // 
@@ -99,6 +100,7 @@
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+
             // 
             // button4
             // 
@@ -109,6 +111,7 @@
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+
             // 
             // button5
             // 
@@ -119,6 +122,7 @@
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+
             // 
             // button6
             // 
@@ -129,6 +133,7 @@
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+
             // 
             // button7
             // 
@@ -139,6 +144,7 @@
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
+
             // 
             // button8
             // 
@@ -149,6 +155,7 @@
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
+
             // 
             // button9
             // 
@@ -159,6 +166,7 @@
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
+
             // 
             // button0
             // 
@@ -169,6 +177,7 @@
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
             this.button0.Click += new System.EventHandler(this.button0_Click);
+
             // 
             // b_dot
             // 
@@ -179,6 +188,7 @@
             this.b_dot.Text = ",";
             this.b_dot.UseVisualStyleBackColor = true;
             this.b_dot.Click += new System.EventHandler(this.b_dot_Click);
+
             // 
             // b_plus
             // 
@@ -405,6 +415,7 @@
             this.b_Probel.Text = " ";
             this.b_Probel.UseVisualStyleBackColor = false;
             this.b_Probel.Click += new System.EventHandler(this.b_Probel_Click);
+
             // 
             // label1
             // 
@@ -449,23 +460,12 @@
             this.textBox3.Size = new System.Drawing.Size(42, 22);
             this.textBox3.TabIndex = 40;
             // 
-            // b_Delete
-            // 
-            this.b_Delete.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.b_Delete.Location = new System.Drawing.Point(10, 439);
-            this.b_Delete.Name = "b_Delete";
-            this.b_Delete.Size = new System.Drawing.Size(60, 60);
-            this.b_Delete.TabIndex = 41;
-            this.b_Delete.Text = "Delete";
-            this.b_Delete.UseVisualStyleBackColor = false;
-            this.b_Delete.Click += new System.EventHandler(this.b_Delete_Click);
-            // 
             // b_Start
             // 
             this.b_Start.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.b_Start.Location = new System.Drawing.Point(76, 439);
+            this.b_Start.Location = new System.Drawing.Point(10, 439);
             this.b_Start.Name = "b_Start";
-            this.b_Start.Size = new System.Drawing.Size(124, 60);
+            this.b_Start.Size = new System.Drawing.Size(190, 60);
             this.b_Start.TabIndex = 42;
             this.b_Start.Text = "Start";
             this.b_Start.UseVisualStyleBackColor = false;
@@ -477,7 +477,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 507);
             this.Controls.Add(this.b_Start);
-            this.Controls.Add(this.b_Delete);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
@@ -561,7 +560,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button b_Delete;
         private System.Windows.Forms.Button b_Start;
     }
 }

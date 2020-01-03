@@ -17,6 +17,7 @@ namespace Model.Service
         String CurrentNumber(string number);
         String CurrentNumber2(string number);
         void SetData(List<Double> bigIntegers);
+        void UpdateNumbers(List<Double> numbers);
         List<Double> Execute(Operation operation);
     }
 }

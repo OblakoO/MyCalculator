@@ -46,7 +46,7 @@ namespace Model.Service
             historyOfOperation.Rows.Add(dataRow);
 
             resultNumber = result;
-            GetResult();
+            resultNumber2 = "";
         }
 
         public void UpdateNumbers(List<Double> numbers)

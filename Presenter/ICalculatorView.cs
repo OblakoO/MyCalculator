@@ -10,7 +10,6 @@ namespace Presenter
     public interface ICalculatorView
     {
         event Action OperationEvent;
-        event Action ClickDelete;
 
         event Action Number0v2;
         event Action Number1v2;
