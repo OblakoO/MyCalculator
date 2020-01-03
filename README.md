@@ -6,3 +6,4 @@
 ## Use case diagram
 ![Use case diagram](https://raw.githubusercontent.com/OblakoO/MyCalculator/master/Basic%20Use%20Case%20Diagram.jpeg)
 ## Activity diagram
+![Activity diagram](https://raw.githubusercontent.com/OblakoO/MyCalculator/master/Blank%20Diagram.jpeg)
