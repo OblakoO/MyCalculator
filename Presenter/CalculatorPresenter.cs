@@ -8,6 +8,8 @@ using Model;
 using Model.Service;
 using Presenter;
 using Model.Entity;
+using System.Data;
+using System.Windows.Forms;
 
 namespace Presenter
 {
@@ -25,6 +27,8 @@ namespace Presenter
             _view = view;
 
             _view.OperationEvent += OperationEvent;
+            _view.ReturnClick += ReturnClick;
+
             _view.ZnakPlus += ZnakPlus;
             _view.ZnakMinus += ZnakMinus;
             _view.ZnakMultiply += ZnakMultiply;
@@ -69,66 +73,68 @@ namespace Presenter
 
         }
 
+        private void ReturnClick(int indexRow, int rows)
+        {
+            //DataGridView gd = (DataGridView)sender;
+
+            //    foreach (DataGridViewRow selected_row in gd.SelectedRows)
+            //    {
+
+            //        //_calculateService.DeleteRows(selected_row);
+            //    }
+            _calculateService.DeleteRows(indexRow, rows);
+        }
+
         private void ZnakSTD()
         {
             string znak = "STD";
             _calculateService.Znak(znak);
         }
-
         private void ZnakMed()
         {
             string znak = "Mediana";
             _calculateService.Znak(znak);
         }
-
         private void ZnakFact()
         {
             string znak = "!";
             _calculateService.Znak(znak);
         }
-
         private void ZnakLog()
         {
             string znak = "log ";
             _calculateService.Znak(znak);
         }
-
         private void ZnakSqrt2()
         {
             string znak = "^1/2";
             _calculateService.Znak(znak);
         }
-
         private void ZnakSqrt()
         {
             string znak = "^1/";
             _calculateService.Znak(znak);
         }
-
         private void ZnakStepen()
         {
             string znak = "^";
             _calculateService.Znak(znak);
         }
-
         private void ZnakStepen2()
         {
             string znak = "^2";
             _calculateService.Znak(znak);
         }
-
         private void ZnakDivide()
         {
             string znak = ":";
             _calculateService.Znak(znak);
         }
-
         private void ZnakMultiply()
         {
             string znak = "x";
             _calculateService.Znak(znak);
         }
-
         private void ZnakPlus()
         {
             string znak = "+";

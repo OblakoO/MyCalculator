@@ -19,6 +19,7 @@ namespace Calculator
         private ApplicationContext _applicationContext;
 
         public event Action OperationEvent;
+        public event  Delegat.ReturnClick ReturnClick;
 
         public event Action ZnakPlus;
         public event Action ZnakMinus;
@@ -492,6 +493,18 @@ namespace Calculator
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void grid_History_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexRow = e.RowIndex;
+            int rows = grid_History.Rows.Count -1;
+
+            //MessageBox.Show(rows.ToString(), Text);
+            //MessageBox.Show(indexRow.ToString(), Text);
+            //CurrentRow.Index;
+            ReturnClick?.Invoke(indexRow, rows);
+            OperationEvent?.Invoke();
         }
     }
 }

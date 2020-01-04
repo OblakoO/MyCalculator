@@ -10,6 +10,7 @@ namespace Presenter
     public interface ICalculatorView
     {
         event Action OperationEvent;
+        event Delegat.ReturnClick ReturnClick;
 
         event Action ZnakPlus;
         event Action ZnakMinus;

@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Model.Service
 {
@@ -25,10 +26,6 @@ namespace Model.Service
         List<Double> numbers = new List<Double>();
         private Stack<Operation> executedOperations = new Stack<Operation>();
         private Stack<Operation> expectedOperations = new Stack<Operation>();
-
-        
-
-
         private DataTable historyOfOperation; //new
         
         public DataTable GetHistory()  //new
@@ -49,6 +46,25 @@ namespace Model.Service
             resultNumber = result;
             resultNumber2 = "";
             thisznak = "";
+        }
+
+        public void DeleteRows(int indexRow, int rows)
+        {
+        
+            while (rows > indexRow+1)
+            {
+                DataRow b = historyOfOperation.Rows[rows-1];
+                historyOfOperation.Rows.Remove(b);
+                rows--;
+            }
+            GetResultTable(indexRow);
+        }
+
+        public void GetResultTable(int indexRow)
+        {
+            DataRow dataRow = historyOfOperation.Rows[indexRow];
+            resultNumber = dataRow[1].ToString();
+     
         }
 
         public void UpdateNumbers(List<Double> numbers)

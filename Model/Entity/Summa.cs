@@ -16,7 +16,7 @@ namespace Model.Entity
         {
             for (int i = 0; i < numbers.Count; i++)
             {
-                numbers[i] += Math.Round(number,3);
+                numbers[i] = Math.Round(numbers[i] + number, 3);
             }
             return numbers;
         }

@@ -10,7 +10,7 @@ namespace Presenter
     public class Delegat
     {
         public delegate void SetData1(List<Double> numbers);
-
+        public delegate void ReturnClick(int indexRow, int rows);
         public delegate void OperationExecuteDelegate(Operation operation);
     }
 }

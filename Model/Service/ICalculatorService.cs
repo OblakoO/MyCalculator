@@ -5,12 +5,14 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Model.Service
 {
     public interface ICalculatorService {
         DataTable GetHistory();   //new
         void AddNewRow();   //new
+        void DeleteRows(int indexRow, int rows);
         //для окошек заполнения цифрами
         String GetResult();
         String GetResult2();
