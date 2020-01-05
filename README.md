@@ -6,5 +6,5 @@
 ## Use case diagram
 ![Use case diagram](https://raw.githubusercontent.com/OblakoO/MyCalculator/master/Basic%20Use%20Case%20Diagram.jpeg)
 ## Activity diagram
-###Возврат к определенному моменту истории
-![Activity diagram](https://raw.githubusercontent.com/OblakoO/MyCalculator/master/Blank%20Diagram.jpeg)
+### Возврат к определенному моменту истории
+![Activity diagram](https://raw.githubusercontent.com/OblakoO/MyCalculator/master/Blank%20Diagram%20(1).jpeg)
